@@ -26,6 +26,7 @@ module.exports = {
     new HtmlWebpackPlugin()
   ],
   devServer: {
+    port: 9000,
     contentBase: path.join(__dirname, 'dist'),
     index: 'index.html'
   }

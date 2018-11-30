@@ -2,7 +2,7 @@
   "name": "nightwing-react",
   "version": "1.0.0",
   "description": "",
-  "main": "dist/index.ts",
+  "main": "src/index.ts",
   "scripts": {
     "tsc": "tsc"
   },
@@ -15,5 +15,8 @@
   },
   "peerDependencies": {
     "react": "^16.6.3"
+  },
+  "devDependencies": {
+    "typescript": "^3.2.1"
   }
 }

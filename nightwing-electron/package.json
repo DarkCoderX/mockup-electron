@@ -2,13 +2,14 @@
   "name": "nightwing-electron",
   "version": "1.0.0",
   "description": "",
-  "main": "out/main.js",
+  "main": "out/nightwing-electron/src/main.js",
   "scripts": {
     "start": "electron .",
     "prestart": "npm run build",
     "build": "npm run tsc && npm run webpack",
     "tsc": "tsc",
-    "webpack": "webpack --mode development"
+    "webpack": "webpack --mode development",
+    "wp-server": "webpack-dev-server --mode development"
   },
   "author": "",
   "license": "ISC",
@@ -16,7 +17,6 @@
     "@types/react": "^16.7.7",
     "@types/react-dom": "^16.0.11",
     "electron": "^3.0.10",
-    "nightwing-react": "file:../nightwing-react",
     "react": "^16.6.3",
     "react-dom": "^16.6.3"
   },
@@ -25,6 +25,7 @@
     "ts-loader": "^5.3.1",
     "typescript": "^3.1.6",
     "webpack": "^4.26.1",
-    "webpack-cli": "^3.1.2"
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.1.10"
   }
 }

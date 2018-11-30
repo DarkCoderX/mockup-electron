@@ -1,37 +1,19 @@
 {
+  "extends": "../tsconfig.json",
   "compilerOptions": {
-    "outDir": "out",
-    "sourceMap": true,
-    "target": "es5",
-    "module": "commonjs",
-    // "downlevelIteration": true,
-    // "emitDecoratorMetadata": true,
-    // "experimentalDecorators": true,
-    // "resolveJsonModule": true,
-    // "noUnusedLocals": false,
-    // "noUnusedParameters": false,
-    "strictNullChecks": false,
-    "strict": true,
-    // "declaration": true,
-    "jsx": "react",
-    "lib": [
-      "dom",
-      "es2015"
-    ],
-    // "plugins": [
-    //   {
-    //     "name": "tslint-language-service",
-    //     "alwaysShowRuleFailuresAsWarnings": true,
-    //     "ignoreDefinitionFiles": true,
-    //     "configFile": "./tslint.json"
-    //     //"disableNoUnusedVariableRule": false
-    //   }
-    // ],
-    "noImplicitAny": true,
-    "strictFunctionTypes": false,
-    "moduleResolution": "node"
+    "outDir": "./out",
+    "baseUrl": "..",
+    "paths": {
+      "nightwing-react": [
+        "nightwing-react/dist/*",
+      ]
+    },
   },
   "include": [
-    "../nightwing-react/src/**/*"
+    "./src/**/*"
+    // "../nightwing-react/src/**/*"
+  ],
+  "references": [
+    { "path": "../nightwing-react" }
   ]
 }
