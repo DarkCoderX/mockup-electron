@@ -1,0 +1,19 @@
+{
+  "name": "nightwing-react",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.ts",
+  "scripts": {
+    "tsc": "tsc"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/react": "^16.7.7",
+    "nightwing-core": "file:../nightwing-core",
+    "react": "^16.6.3"
+  },
+  "peerDependencies": {
+    "react": "^16.6.3"
+  }
+}
