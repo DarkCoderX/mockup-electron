@@ -1,5 +1,5 @@
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: './src/app/app.tsx',
@@ -9,21 +9,23 @@ module.exports = {
         test: /\.tsx?$/,
         loader: 'ts-loader',
         options: { 
-          // allowTsInNodeModules: true 
+          allowTsInNodeModules: true,
+          configFile:  path.resolve(__dirname, 'tsconfig.webpack.json'),
         },
         // exclude: ['/node_modules']
       }
     ]
   },
   resolve: {
-    extensions: [ '.tsx', '.ts', '.js' ]
+    extensions: [ '.tsx', '.ts', '.js' ],
   },
+  devtool: 'source-map',
   output: {
     filename: 'bundle.js',
-    path: path.resolve(__dirname, 'out/app')
+    path: path.resolve(__dirname, 'dist/app')
   },
   plugins: [
-    new HtmlWebpackPlugin()
+    new HtmlWebpackPlugin(),
   ],
   devServer: {
     port: 9000,

@@ -1,4 +1,4 @@
-import { ContactList } from '../../../nightwing-react/src';
+import { ContactList } from 'nightwing-react/src';
 
 import * as React from 'react';
 

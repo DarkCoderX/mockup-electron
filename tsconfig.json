@@ -18,7 +18,6 @@
     "noImplicitAny": true,
     "strictFunctionTypes": false,
     "moduleResolution": "node",
-    "composite": true,
   },
   "references": [
     { "path": "./nightwing-electron"},

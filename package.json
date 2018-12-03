@@ -1,0 +1,22 @@
+{
+  "name": "nightwing",
+  "version": "1.0.0",
+  "description": "Playground to Test a React / Express / Electron Project structure",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DarkCoderX/mockup-electron.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DarkCoderX/mockup-electron/issues"
+  },
+  "homepage": "https://github.com/DarkCoderX/mockup-electron#readme",
+  "devDependencies": {
+    "typescript": "^3.2.1"
+  }
+}

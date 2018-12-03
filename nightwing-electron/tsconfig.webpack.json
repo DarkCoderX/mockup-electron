@@ -1,0 +1,14 @@
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "outDir": "./out",
+    "baseUrl": ".",
+  },
+  "include": [
+    "../nightwing-react/src/**/*",
+    "../nightwing-core/src/**/*",
+  ],
+  "files": [
+    "./src/app/app.tsx"
+  ],
+}

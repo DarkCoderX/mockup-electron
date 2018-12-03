@@ -1,17 +1,10 @@
 {
   "extends": "../tsconfig.json",
   "compilerOptions": {
-    "outDir": "./out",
-    "baseUrl": "..",
-    "paths": {
-      "nightwing-react": [
-        "nightwing-react/dist/*",
-      ]
-    },
+    "outDir": "./dist",
   },
-  "include": [
-    "./src/**/*"
-    // "../nightwing-react/src/**/*"
+  "files": [
+    "./src/main.ts"
   ],
   "references": [
     { "path": "../nightwing-react" }
