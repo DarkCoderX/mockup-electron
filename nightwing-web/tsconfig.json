@@ -6,5 +6,8 @@
   "include": [
     "../nightwing-react/src/**/*",
     "../src/**/*"
+  ],
+  "references": [
+    "../nightwing-core"
   ]
 }

@@ -10,7 +10,7 @@ module.exports = {
         loader: 'ts-loader',
         options: { 
           allowTsInNodeModules: true,
-          configFile:  path.resolve(__dirname, 'tsconfig.webpack.json'),
+          // configFile:  path.resolve(__dirname, 'tsconfig.webpack.json'),
         },
         // exclude: ['/node_modules']
       }

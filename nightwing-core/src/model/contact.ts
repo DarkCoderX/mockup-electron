@@ -4,6 +4,7 @@ export interface IContact {
   email: string;
   name: IName;
   picture: IAvatar;
+  test: string;
 }
 
 export interface IName {

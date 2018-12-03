@@ -4,10 +4,14 @@
   "description": "",
   "main": "dist/main.js",
   "scripts": {
-    "start": "electron .",
+    "start": "npm-run-all --parallel wp-server electron",
+    "start:watch": "npm-run-all --parallel wp-server tsc:watch electron",
     "prestart": "npm run build",
     "build": "npm run tsc",
-    "tsc": "tsc",
+    "tsc": "tsc --build",
+    "tsc:watch": "tsc --build --watch",
+    "electron": "electron .",
+    "preelectron": "npm run tsc",
     "webpack": "webpack --mode development",
     "wp-server": "webpack-dev-server --mode development"
   },
@@ -16,17 +20,61 @@
   "dependencies": {
     "@types/react": "^16.7.7",
     "@types/react-dom": "^16.0.11",
-    "electron": "^3.0.10",
     "nightwing-react": "file:../nightwing-react",
     "react": "^16.6.3",
     "react-dom": "^16.6.3"
   },
   "devDependencies": {
+    "electron": "^3.0.10",
+    "electron-builder": "^20.38.2",
     "html-webpack-plugin": "^3.2.0",
+    "npm-run-all": "^4.1.5",
     "ts-loader": "^5.3.1",
     "typescript": "^3.1.6",
     "webpack": "^4.26.1",
     "webpack-cli": "^3.1.2",
     "webpack-dev-server": "^3.1.10"
+  },
+  "build": {
+    "appId": "eu.xxx.terminal",
+    "mac": {
+      "category": "public.app-category.finance",
+      "type": "development"
+    },
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        },
+        {
+          "target": "msi",
+          "arch": [
+            "x64"
+          ]
+        }
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    },
+    "copyright": "Copyright (c) 2017-2018 Klug&Milke, Harald Niesche for 2iQ Research",
+    "productName": "Mockup Electron",
+    "publish": {
+      "provider": "generic",
+      "url": "https://alpha-terminal.knm.io/terminal/update/2fd01a6c-d55b-11e7-801e-7831c1c43a5a/",
+      "channel": "snapshot"
+    },
+    "npmSkipBuildFromSource": true,
+    "files": [
+      "dist/**/*",
+      "package.json",
+      "!data/**/*",
+      "!userData",
+      "!userData/**/*"
+    ]
   }
 }
