@@ -9,14 +9,26 @@ module.exports = {
         test: /\.tsx?$/,
         loader: 'ts-loader',
         options: { 
-          // allowTsInNodeModules: true 
+          allowTsInNodeModules: true,
         },
-        // exclude: ['/node_modules']
+      },
+      {
+        test: /\.scss$/,
+        use: [
+            "style-loader",
+            "css-loader",
+            {
+              loader: "sass-loader",
+              options: {
+                  implementation: require("sass")
+              }
+            }
+        ]
       }
     ]
   },
   resolve: {
-    extensions: [ '.tsx', '.ts', '.js' ]
+    extensions: [ '.tsx', '.ts', '.js' ],
   },
   output: {
     filename: 'bundle.js',

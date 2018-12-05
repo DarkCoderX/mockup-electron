@@ -4,10 +4,13 @@
     "outDir": "./out"
   },
   "include": [
-    "../nightwing-react/src/**/*",
-    "../src/**/*"
+    "./src/**/*"
+  ],
+  "exclude": [
+    "node_moodules"
   ],
   "references": [
-    "../nightwing-core"
+    { "path": "../nightwing-core" },
+    { "path": "../nightwing-react" },
   ]
 }

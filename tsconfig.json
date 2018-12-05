@@ -20,7 +20,7 @@
     "moduleResolution": "node",
   },
   "references": [
-    { "path": "./nightwing-electron"},
-    { "path": "./nightwing-react"}
+    { "path": "./nightwing-react"},
+    { "path": "./nightwing-core"}
   ]
 }

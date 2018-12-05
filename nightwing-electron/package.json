@@ -1,21 +1,31 @@
 {
+  "author": "Dennis Göring",
   "name": "nightwing-electron",
   "version": "1.0.0",
-  "description": "",
+  "description": "Electron Test",
   "main": "dist/main.js",
   "scripts": {
     "start": "npm-run-all --parallel wp-server electron",
     "start:watch": "npm-run-all --parallel wp-server tsc:watch electron",
     "prestart": "npm run build",
     "build": "npm run tsc",
+    "build:dist": "npm-run-all tsc webpack:main webpack:renderer",
     "tsc": "tsc --build",
     "tsc:watch": "tsc --build --watch",
-    "electron": "electron .",
+    "tsc:prod": "tsc --build",
+    "electron": "electron ./out/main.js",
     "preelectron": "npm run tsc",
-    "webpack": "webpack --mode development",
-    "wp-server": "webpack-dev-server --mode development"
+    "wp-server": "webpack-dev-server --config webpack.config.renderer.js --mode development",
+    
+    "webpack:renderer": "webpack --config webpack.config.renderer.js --mode production",
+    "webpack:main":     "webpack --config webpack.config.main.js --mode production",
+    
+    "preelectron:dist": "npm run build:dist",
+    "electron:dist": "electron ./dist/main.js",
+    
+    "predist": "npm run build:dist",
+    "dist": "electron-builder"
   },
-  "author": "",
   "license": "ISC",
   "dependencies": {
     "@types/react": "^16.7.7",
@@ -25,22 +35,22 @@
     "react-dom": "^16.6.3"
   },
   "devDependencies": {
+    "css-loader": "^1.0.1",
     "electron": "^3.0.10",
     "electron-builder": "^20.38.2",
     "html-webpack-plugin": "^3.2.0",
     "npm-run-all": "^4.1.5",
+    "sass": "^1.15.1",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
     "ts-loader": "^5.3.1",
     "typescript": "^3.1.6",
+    "uglify-js": "^3.4.9",
     "webpack": "^4.26.1",
     "webpack-cli": "^3.1.2",
     "webpack-dev-server": "^3.1.10"
   },
   "build": {
-    "appId": "eu.xxx.terminal",
-    "mac": {
-      "category": "public.app-category.finance",
-      "type": "development"
-    },
     "win": {
       "target": [
         {
@@ -57,10 +67,6 @@
         }
       ]
     },
-    "nsis": {
-      "oneClick": false,
-      "allowToChangeInstallationDirectory": true
-    },
     "copyright": "Copyright (c) 2017-2018 Klug&Milke, Harald Niesche for 2iQ Research",
     "productName": "Mockup Electron",
     "publish": {
@@ -68,10 +74,12 @@
       "url": "https://alpha-terminal.knm.io/terminal/update/2fd01a6c-d55b-11e7-801e-7831c1c43a5a/",
       "channel": "snapshot"
     },
+    "directories": {
+      "output": "installer"
+    },
     "npmSkipBuildFromSource": true,
     "files": [
       "dist/**/*",
-      "package.json",
       "!data/**/*",
       "!userData",
       "!userData/**/*"
