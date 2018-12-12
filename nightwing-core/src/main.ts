@@ -1,2 +1,3 @@
 
-export {IContact, IAvatar, IName } from './model/contact';
+export {IHero} from './model/hero';
+export {HeroService} from './service/hero-service';
