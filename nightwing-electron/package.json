@@ -16,13 +16,10 @@
     "electron": "electron ./out/main.js",
     "preelectron": "npm run tsc",
     "wp-server": "webpack-dev-server --config webpack.config.renderer.js --mode development",
-    
     "webpack:renderer": "webpack --config webpack.config.renderer.js --mode production",
-    "webpack:main":     "webpack --config webpack.config.main.js --mode production",
-    
+    "webpack:main": "webpack --config webpack.config.main.js --mode production",
     "preelectron:dist": "npm run build:dist",
     "electron:dist": "electron ./dist/main.js",
-    
     "predist": "npm run build:dist",
     "dist": "electron-builder"
   },

@@ -18,9 +18,5 @@
     "noImplicitAny": true,
     "strictFunctionTypes": false,
     "moduleResolution": "node",
-  },
-  "references": [
-    { "path": "./nightwing-react"},
-    { "path": "./nightwing-core"}
-  ]
+  }
 }
