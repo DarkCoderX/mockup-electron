@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --mode development",
     "tsc": "tsc --build",
-    "start": "webpack-dev-server --mode development --open"
+    "start": "webpack-dev-server --mode development --open",
+    "dist": "webpack --mode production"
   },
   "author": "",
   "license": "ISC",

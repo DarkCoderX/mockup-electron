@@ -5,6 +5,8 @@
   "main": "dist/server.js",
   "scripts": {
     "tsc": "tsc --build",
+    "build": "npm run tsc",
+    "dist": "npm run tsc",
     "start": "node dist/server.js",
     "prestart": "npm run tsc"
   },

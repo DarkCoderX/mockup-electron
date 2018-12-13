@@ -5,7 +5,8 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "tsc": "tsc --build"
+    "tsc": "tsc --build",
+    "build": "npm run tsc"
   },
   "rootDir": "./src",
   "author": "",
