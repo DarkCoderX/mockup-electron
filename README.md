@@ -21,8 +21,17 @@ start a `webpack-dev-server` and the electron app. The ts code will
 just be compiled once, changes afterwards has to be compiled manual,
 with `npm run tsc` or `npm run build`. 
 
-The ts files can also be watched by using `npm run tsc:watch`, this will also watch the changes in 
-`electron-core` and `electron-react`. 
+The ts files can also be watched by using `npm run tsc:watch`, this will also
+watch the changes in `electron-core` and `electron-react`. 
+
+`npm run start:watch` combines the `npm run start` and `npm run tsc:watch`
 
 
-The web
+## Website
+
+To start the website APÍ goto `nightwing-express` and execute `npm start`. To
+create a dev build run `npm run build` for production `npm run dist`. 
+
+The for the UI code goto `nightwing-web`, to start and build you have the 
+same scripts like in `nightwing-express`.  The `nightwing-web` needs a 
+running `nightwing-express`.
