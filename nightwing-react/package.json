@@ -14,14 +14,13 @@
   "dependencies": {
     "@types/react": "^16.7.7",
     "nightwing-core": "file:../nightwing-core",
-    "react": "^16.6.3",
-    "tsc": "^1.20150623.0"
+    "react": "^16.6.3"
   },
   "peerDependencies": {
     "react": "^16.6.3"
   },
   "devDependencies": {
     "sass": "^1.15.1",
-    "typescript": "^3.2.2"
+    "typescript": "file:../node_modules/typescript"
   }
 }
